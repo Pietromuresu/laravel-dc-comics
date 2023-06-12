@@ -9,9 +9,8 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
-              <a class="nav-link" href="#">Contatti</a>
-
-
+              <a class="nav-link" href="{{ route('contacts') }}">Contatti</a>
+              <a class="nav-link" href="{{ route('comics.index') }}">All Comics</a>
             </div>
           </div>
         </div>
