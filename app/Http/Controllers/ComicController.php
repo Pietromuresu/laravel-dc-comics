@@ -26,6 +26,7 @@ class ComicController extends Controller
      */
     public function create()
     {
+
         return view('comics.create');
     }
 
@@ -64,9 +65,8 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view('comics.edit', compact('comic'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -74,9 +74,13 @@ class ComicController extends Controller
      * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(ComicRequest $request, Comic $comic)
     {
-        //
+        $form_data = $request->all();
+        $comic->update($form_data);
+
+        return redirect()->route('comics.show', $comic);
+
     }
 
     /**

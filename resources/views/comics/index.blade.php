@@ -17,6 +17,8 @@
                 <th scope="col">Price</th>
                 <th scope="col">Launch Date</th>
                 <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
@@ -28,7 +30,9 @@
                     <td>{{$comic->series}}</td>
                     <td>{{$comic->price}}</td>
                     <td>{{$comic->sale_date}}</td>
-                    <td><a href="{{route('comics.show', $comic)}}" class="btn btn-primary">Vedi</a></td>
+                    <td><a href="{{route('comics.show', $comic)}}" class="btn btn-primary"><i class="fa-solid fa-circle-info" style="color: #ffffff;"></i></a></td>
+                    <td><a href="{{route('comics.edit', $comic)}}" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a></td>
+                    <td><a href="{{route('comics.show', $comic)}}" class="btn btn-primary"><i class="fa-regular fa-trash-can"></i></a></td>
                 </tr>
                 @endforeach
 
