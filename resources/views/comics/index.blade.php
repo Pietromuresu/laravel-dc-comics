@@ -32,8 +32,20 @@
                     <td>{{$comic->sale_date}}</td>
                     <td><a href="{{route('comics.show', $comic)}}" class="btn btn-primary"><i class="fa-solid fa-circle-info" style="color: #ffffff;"></i></a></td>
                     <td><a href="{{route('comics.edit', $comic)}}" class="btn btn-primary"><i class="fa-solid fa-pencil"></i></a></td>
-                    <td><a href="{{route('comics.show', $comic)}}" class="btn btn-primary"><i class="fa-regular fa-trash-can"></i></a></td>
-                </tr>
+                    <td>
+                        <form
+                          action="{{route('comics.destroy', $comic)}}"
+                          method="POST">
+
+                          @csrf
+                          @method('DELETE')
+
+                            <button type="submit" href="{{route('comics.destroy', $comic)}}" class="btn btn-primary">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                        </form>
+                    </td>
+                        </tr>
                 @endforeach
 
             </tbody>
