@@ -8,6 +8,7 @@
 
         <h1 class="text-center py-5">{{$comic->title}}</h1>
         <img height="300px" src="{{$comic->thumb}}" alt="">
+        <h4>Slug  : {{$comic->slug}}</h4>
         <h4>Genre : {{$comic->type}}</h4>
         <h4>Series: {{$comic->series}}</h4>
         <h4>Price: {{$comic->price}}</h4>

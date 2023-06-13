@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('type', 50)->nullable();
             $table->string('artists');
             $table->string('writers');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

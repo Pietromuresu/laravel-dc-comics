@@ -40,7 +40,10 @@ class ComicController extends Controller
     {
         $form_data = $request->all();
         $new_Comic = new Comic;
+
+        $new_Comic->slug = Comic::generateSlug($form_data['title']);
         $new_Comic->fill($form_data);
+        //   dd($new_Comic);
         $new_Comic->save() ;
 
         return redirect()->route('comics.show', $new_Comic);
@@ -76,7 +79,15 @@ class ComicController extends Controller
      */
     public function update(ComicRequest $request, Comic $comic)
     {
+
+
         $form_data = $request->all();
+        if($comic->title !== $form_data['title']){
+            $comic->slug = Comic::generateSlug($form_data['title']);
+        }else{
+            $comic->slug = $comic->slug;
+        }
+
         $comic->update($form_data);
 
         return redirect()->route('comics.show', $comic);
