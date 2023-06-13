@@ -35,7 +35,9 @@
                     <td>
                         <form
                           action="{{route('comics.destroy', $comic)}}"
-                          method="POST">
+                          method="POST"
+                          onsubmit="return confirm('If you confirm, {{ $comic->title }} will be deleted forever')">
+
 
                           @csrf
                           @method('DELETE')
