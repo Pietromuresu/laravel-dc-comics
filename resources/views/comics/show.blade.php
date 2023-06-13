@@ -17,6 +17,22 @@
         <h4>  Description:</h4>
         <p>{{$comic->description}}</p>
 
+        <div class="d-flex justify-content-center">
+            <a href="{{route('comics.edit', $comic)}}" class="btn btn-primary">Edit</a>
+            <form
+            class="ms-3"
+            action="{{route('comics.destroy', $comic)}}"
+            method="POST">
+
+            @csrf
+            @method('DELETE')
+
+              <button type="submit" href="{{route('comics.destroy', $comic)}}" class="btn btn-danger">
+                  Delete
+              </button>
+          </form>
+        </div>
+
 
     </div>
         @endsection
